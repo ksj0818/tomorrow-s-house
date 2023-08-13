@@ -7,7 +7,13 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "kakao-color": "#FCE601",
+        "naver-color": "#07BF35",
+        "apple-color": "#000000",
+      },
+    },
   },
   plugins: [],
 };
