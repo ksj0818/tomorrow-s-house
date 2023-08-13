@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ChangeEvent, useState } from "react";
 import { BsSearch, BsChevronDown } from "react-icons/bs";
 import { LiaShoppingCartSolid } from "react-icons/lia";
+import LoginBtn from "./LoginBtn";
 
 const LEFT_LINK = [
   {
@@ -17,20 +18,7 @@ const LEFT_LINK = [
     url: "/experts",
   },
 ];
-const RIGHT_LINK = [
-  {
-    name: "로그인",
-    url: "/signin",
-  },
-  {
-    name: "회원가입",
-    url: "/signup",
-  },
-  {
-    name: "고객센터",
-    url: "/customercenter",
-  },
-];
+
 export default function Header() {
   const [search, setSearch] = useState("");
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -69,13 +57,10 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-x-2 min-w-[302px] text-slate-600">
             <LiaShoppingCartSolid className="text-2xl" />
             <div className="flex items-center gap-3 text-sm">
-              {RIGHT_LINK.map((link) => (
-                <p key={link.url}>
-                  <Link href={link.url} key={link.url}>
-                    <a>{link.name}</a>
-                  </Link>
-                </p>
-              ))}
+              <LoginBtn />
+              <Link href="/">
+                <a>고객센터</a>
+              </Link>
               <button className="flex items-center bg-sky-400 p-2 gap-4 rounded-md text-white">
                 <span>글쓰기</span>
                 <BsChevronDown className="font-bold" />
