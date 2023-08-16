@@ -10,7 +10,10 @@ export default function ProductDetailPage() {
   const products = [...posts];
   const router = useRouter();
   const product = products.filter((item) => item.id === router.query.slug);
-  const { id, brand, deliveryBTN, imgPath, price, review, sale, specialpriceBTN, title } = product[0];
+  {
+    product.length === 0 && product.push(posts[0]);
+  }
+  const { brand, deliveryBTN, imgPath, price, review, sale, specialpriceBTN, title } = product[0];
   const onClick = () => {
     alert("😅");
   };
