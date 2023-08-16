@@ -30,6 +30,7 @@ export default function ProductDetailPage() {
               width={70}
               height={70}
               className=" hover:scale-105 transition duration-300"
+              priority
             />
           </li>
         </ul>
